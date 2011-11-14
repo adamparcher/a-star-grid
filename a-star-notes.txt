@@ -1,0 +1,35 @@
+Greedy Search Pseudocode
+  PATHS = {}
+  add all adjacent paths to PATHS
+  P = member of PATHS with least f(p)
+    if P is goal, then stop
+    for each adjacent node N to P
+      if N is not already "visited"
+        new path P' = P << N
+        add P' to PATHS
+        mark N "visited"
+
+  where f(p) = # of nodes on path
+
+
+
+
+A* Search Pseudocode
+
+Defined
+  Choose the next path to expand, P
+  where f(P) is the lowest
+  where f(p) = g(p) + h(p)
+    where g(p) = current path cost
+    and h(p) = h(s) = estimated distance to goal
+    
+Optimization
+  A* is guaranteed to find the best path as long as:
+    h(s) <= true cost
+    in other words "h is optimistic"
+    
+Pseudocode is the same as greedy search. But cost function f(p) is different.
+
+f(p) = g(p) + h(p)
+where g(p) is # nodes on path
+and h(p) is distance (as the crow flies) to goal node
